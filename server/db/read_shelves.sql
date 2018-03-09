@@ -1,1 +1,1 @@
-SELECT * FROM shelf WHERE item_id = $1;
+SELECT * FROM shelf;

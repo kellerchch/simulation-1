@@ -14,9 +14,18 @@ module.exports = {
     getAllBins: ( req, res, next ) => {
       console.log('getAllBins') 
       const dbInstance = req.app.get('db');
-  
-      dbInstance.read_bins( )
+  console.log(req.params.id)
+      dbInstance.read_bins([ req.params.id ])
         .then( bins => res.status(200).send( bins ) )
+        .catch( () => res.status(500).send() );
+    },
+
+    getAllShelves: ( req, res, next ) => {
+      console.log('getAllShelves') 
+      const dbInstance = req.app.get('db');
+  
+      dbInstance.read_shelves( )
+        .then( shelves => res.status(200).send( shelves ) )
         .catch( () => res.status(500).send() );
     },
 

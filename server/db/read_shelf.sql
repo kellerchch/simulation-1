@@ -1,0 +1,1 @@
+SELECT * FROM shelf WHERE item_id = $1;
